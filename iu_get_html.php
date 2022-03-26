@@ -4,6 +4,7 @@ namespace image_uploader;
 
 use function image_uploader\modules\space_br;
 
+require_once "init.php";
 require_once HTML_COMMON_MODULE . "/html_common_module.php";
 require_once "ImgUploader.php";
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace image_uploader;
+
 // セッション宣言
 // start_session();
 session_start();
@@ -29,7 +31,7 @@ function h($s) {
 
 require "uploader.php";
 
-$uploader = new \Eningrad\ImgUploader();
+$uploader = new ImgUploader();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") { // 定義済み変数。投稿、送信が行われたらの処理
   $uploader->upload();

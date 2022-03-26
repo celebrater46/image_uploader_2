@@ -1,6 +1,6 @@
 <?php
 
-namespace Eningrad;
+namespace image_uploader;
 
 class ImgUploader {
   private $_imageFileName;

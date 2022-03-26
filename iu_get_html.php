@@ -5,8 +5,8 @@ namespace image_uploader;
 use function image_uploader\modules\space_br;
 
 require_once "init.php";
-require_once HTML_COMMON_MODULE . "/html_common_module.php";
 require_once "ImgUploader.php";
+require_once HTML_COMMON_MODULE . "/html_common_module.php";
 
 function get_script_html(){
     $html = space_br('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>', 1);

@@ -35,14 +35,22 @@ function get_success_or_error($success, $error){
     }
 }
 
-function create_upload_button($btn_msg){
+function create_upload_button($contents){
     $html = space_br('<div class="btn">', 1);
-    $html .= space_br($btn_msg, 2);
     if(IU_USE_FORM){
         $html .= space_br('<form action="" method="post" enctype="multipart/form-data" id="my-form">', 2);
     }
+    $html .= space_br($contents, 3);
+    if(IU_USE_SUBMIT_BTN){
+        $html .= space_br("画像ファイル：", 2);
+    }
     $html .= space_br('<input type="hidden" name="MAX_FILE_SIZE" value="' . MAX_FILE_SIZE . '">', 3);
     $html .= space_br('<input type="file" name="image" id="my-file">', 3);
+    if(IU_USE_SUBMIT_BTN){
+        $html .= space_br("<br>", 3);
+        $html .= space_br("<br>", 3);
+        $html .= space_br('<input class="btn" type="submit" value="送信">', 3);
+    }
     if(IU_USE_FORM){
         $html .= space_br("</form>", 2);
     }
@@ -50,7 +58,7 @@ function create_upload_button($btn_msg){
     return $html;
 }
 
-function iu_get_html($btn_msg){
+function iu_get_html($html){
     if (!function_exists('imagecreatetruecolor')) {
         echo "GD が入ってへん！！";
         exit;
@@ -65,7 +73,7 @@ function iu_get_html($btn_msg){
     list($success, $error) = $uploader->getResults();
     $images = $uploader->getImages();
 
-    $html = create_upload_button($btn_msg);
+    $html = create_upload_button($html);
     $html .= get_success_or_error($success, $error);
     if(IU_SHOW_POSTED_IMAGES){
         $html .= get_uploaded_images($images);

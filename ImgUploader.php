@@ -3,7 +3,7 @@
 namespace image_uploader;
 
 class ImgUploader {
-  private $_imageFileName;
+  public $_imageFileName;
   private $_imageType;
 
   public function upload() {
@@ -13,7 +13,7 @@ class ImgUploader {
 
       // 画像の形式が違うと処理も変わるので、形式をチェック
       $ext = $this->_validateImageType();
-      // var_dump($ext); // うまく行ったかチェック！
+       var_dump($ext); // うまく行ったかチェック！
       // exit;
 
       // 保存
@@ -24,15 +24,22 @@ class ImgUploader {
 
       $_SESSION["success"] = "アップロードしたで！！";
 
+      // テスト用
+      echo "Upload succeeded." . "<br>";
+
     } catch (\Exception $e) {
       $_SESSION["error"] = $e->getMessage();
+        // テスト用
+        echo "Upload failed." . "<br>";
       // exit;
     }
     // リダイレクトにはヘッダ命令
     // header("Location: http://" . $_SERVER["HTTP_HOST"]);
     // header("Location: C:\xampp\htdocs\PG\DotInstall\PHP\php7\index.php");
     // header("Location: http://localhost/PG/DotInstall/PHP/php7/index.php"); // リダイレクトは http～が正解
-    header("Location: http://enin-world.sakura.ne.jp/enin/pg/note/PHP/php7/index.php");
+    if(IU_REDIRECT){
+      header("Location: " . IU_REDIRECT_TO);
+    }
     exit;
   }
 
@@ -150,7 +157,7 @@ class ImgUploader {
   }
 
   private function _validateUpload() {
-    // var_dump($_FILES);
+     var_dump($_FILES);
     // exit;
 
     if (!isset($_FILES["image"]) || !isset($_FILES["image"]["error"])) { // 右のは改ざんされたフォームからのチェック

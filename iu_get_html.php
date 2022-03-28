@@ -58,29 +58,38 @@ function create_upload_button($contents){
     return $html;
 }
 
-function iu_get_html($html){
+function iu_get_html($html, $is_html){
     if (!function_exists('imagecreatetruecolor')) {
         echo "GD が入ってへん！！";
         exit;
     }
 
+    echo "Hello World from iu" . "<br>";
+
     $uploader = new ImgUploader();
+    var_dump($uploader);
+//    var_dump($_SERVER["REQUEST_METHOD"]);
+    echo "Hello World from iu 2" . "<br>";
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") { // 定義済み変数。投稿、送信が行われたらの処理
+        echo "server request is POST" . "<br>";
         $uploader->upload();
     }
 
     list($success, $error) = $uploader->getResults();
     $images = $uploader->getImages();
 
+    if($is_html === false){ return $uploader; }
+
     $html = create_upload_button($html);
     $html .= get_success_or_error($success, $error);
+
     if(IU_SHOW_POSTED_IMAGES){
         $html .= get_uploaded_images($images);
     }
-    $html .= get_script_html();
-    return [
-        "form" => $html,
-        "obj" => $uploader
-    ];
+
+    if(IU_USE_FORM){
+        $html .= get_script_html();
+    }
+    return $html;
 }

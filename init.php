@@ -12,8 +12,10 @@ define('THUMBNAIL_WIDTH', 400);
 // define('THUMBNAIL_DIR', 'http://localhost/myapps/image_uploader/s');
 //define('IMAGES_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\image_uploader\img'); // ローカル開発環境のディレクトリはこちらが正解
 //define('THUMBNAIL_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\image_uploader\s');
-define('IMAGES_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\image_uploader_2\img'); // ローカル開発環境のディレクトリはこちらが正解
-define('THUMBNAIL_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\image_uploader_2\s');
+//define('IMAGES_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\image_uploader_2\img');
+//define('THUMBNAIL_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\image_uploader_2\s');
+define('IMAGES_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\img');
+define('THUMBNAIL_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\php_hp_gallery\thumb');
 define('HTML_COMMON_MODULE', 'modules');
 define('IU_USE_FORM', false); // <form> タグを書くか
 define('IU_USE_SUBMIT_BTN', true); // 送信ボタンを置くか

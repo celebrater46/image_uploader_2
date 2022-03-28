@@ -64,15 +64,15 @@ function iu_get_html($html, $is_html){
         exit;
     }
 
-    echo "Hello World from iu" . "<br>";
+//    echo "Hello World from iu" . "<br>";
 
     $uploader = new ImgUploader();
-    var_dump($uploader);
+//    var_dump($uploader);
 //    var_dump($_SERVER["REQUEST_METHOD"]);
-    echo "Hello World from iu 2" . "<br>";
+//    echo "Hello World from iu 2" . "<br>";
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") { // 定義済み変数。投稿、送信が行われたらの処理
-        echo "server request is POST" . "<br>";
+//        echo "server request is POST" . "<br>";
         $uploader->upload();
     }
 

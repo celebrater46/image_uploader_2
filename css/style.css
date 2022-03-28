@@ -23,7 +23,7 @@ input[type=file] {
     opacity: 0;
 }
 
-.btn {
+div.btn {
     position: relative;
     display: inline-block;
     width: 300px;

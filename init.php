@@ -13,3 +13,5 @@ define('THUMBNAIL_WIDTH', 400);
 define('IMAGES_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\image_uploader\img'); // ローカル開発環境のディレクトリはこちらが正解
 define('THUMBNAIL_DIR', 'J:\Dropbox\PC5_cloud\pg\xampp\htdocs\myapps\image_uploader\s');
 define('HTML_COMMON_MODULE', 'modules');
+define('IU_USE_FORM', false); // <form> タグを書くか
+define('IU_SHOW_POSTED_IMAGES', false); // アップロードした画像一覧を表示するかどうか

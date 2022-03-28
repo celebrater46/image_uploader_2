@@ -5,6 +5,7 @@ namespace image_uploader;
 class ImgUploader {
   public $_imageFileName;
   private $_imageType;
+//  public $temp_file_name; // テスト用
 
   public function upload() {
     try {
@@ -13,7 +14,7 @@ class ImgUploader {
 
       // 画像の形式が違うと処理も変わるので、形式をチェック
       $ext = $this->_validateImageType();
-       var_dump($ext); // うまく行ったかチェック！
+//       var_dump($ext); // うまく行ったかチェック！
       // exit;
 
       // 保存
@@ -40,7 +41,7 @@ class ImgUploader {
     if(IU_REDIRECT){
       header("Location: " . IU_REDIRECT_TO);
     }
-    exit;
+//    exit; // この exit で _imageFileName が破棄される
   }
 
   public function getResults() {
@@ -61,8 +62,6 @@ class ImgUploader {
     $images = [];
     $files = [];
     $imageDir = opendir(IMAGES_DIR);
-    // echo $imageDir . PHP_EOL; // テスト用
-    // var_dump($imageDir);
     $test = 0; // テスト用
     while (false !== ($file = readdir($imageDir))) {
       if ($file === "." || $file === "..") {
@@ -134,6 +133,7 @@ class ImgUploader {
       sha1(uniqid(mt_rand(), true)),
       $ext
     );
+//    var_dump($this->_imageFileName);
     $savePath = IMAGES_DIR . '/' . $this->_imageFileName;
     $res = move_uploaded_file($_FILES['image']['tmp_name'], $savePath);
     if ($res === false) {
@@ -157,7 +157,7 @@ class ImgUploader {
   }
 
   private function _validateUpload() {
-     var_dump($_FILES);
+//     var_dump($_FILES);
     // exit;
 
     if (!isset($_FILES["image"]) || !isset($_FILES["image"]["error"])) { // 右のは改ざんされたフォームからのチェック

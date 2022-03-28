@@ -9,6 +9,8 @@ require_once HTML_COMMON_MODULE . "/html_common_module.php";
 // セッション宣言
 session_start();
 
+$uploader = iu_get_html("");
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,6 +20,6 @@ session_start();
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<?php echo iu_get_html(); ?>
+<?php echo $uploader["form"]; ?>
 </body>
 </html>

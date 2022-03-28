@@ -79,5 +79,8 @@ function iu_get_html($html){
         $html .= get_uploaded_images($images);
     }
     $html .= get_script_html();
-    return $html;
+    return [
+        "form" => $html,
+        "obj" => $uploader
+    ];
 }

@@ -5,7 +5,6 @@ namespace image_uploader;
 class ImgUploader {
   public $_imageFileName;
   private $_imageType;
-//  public $temp_file_name; // テスト用
 
   public function upload() {
     try {

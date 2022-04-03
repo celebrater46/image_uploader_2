@@ -16,7 +16,7 @@ define('IU_SHOW_POSTED_IMAGES', false); // アップロードした画像一覧�
 define('IU_REDIRECT', false); // アップロード後にリダイレクトするかどうか
 
 define('IU_HCM', FCM_HCM);
-define('IU_REDIRECT_TO', 'http://localhost/myapps/php_hp_gallery/upload.php'); // リダイレクト先の指定
-define('IU_PATH', 'J:\\Dropbox\\PC5_cloud\\pg\\xampp\\htdocs\\myapps\\fujimipolis\\files\\app\\php\\fp_common_modules\\image_uploader_2\\');
+define('IU_REDIRECT_TO', 'http://localhost/php_hp_gallery/upload.php'); // リダイレクト先の指定
+define('IU_PATH', '/home/enin-world/www/fp_common_modules/image_uploader_2/');
 define('IMAGES_DIR', IU_PATH . 'img');
 define('THUMBNAIL_DIR', IU_PATH . 'thumb');
